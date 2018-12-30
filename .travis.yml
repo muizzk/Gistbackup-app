@@ -2,6 +2,7 @@ language: bash
 sudo: required
 
 script:
+    - echo "Downloading jq."
     - sudo apt-get install jq -y
     - echo "Making connection using github api"
     - wget -O gistbackup.sh https://gist.githubusercontent.com/hemanth22/195b4e3142c1b9ec961d1a81967171c3/raw/47c1f6c079376655dd68f9152f5c7d167ee3a3a1/backupgist.sh
