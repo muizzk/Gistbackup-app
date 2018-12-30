@@ -1,6 +1,8 @@
 language: bash
 
+
 script:
+    - apt-get install jq -y
     - echo "Making connection using github api"
     - curl -H "Authorization: token $OAUTH" https://api.github.com/users/hemanth22/gists | jq -r '.[].files[].raw_url'
     - echo "Connection Established & List gist raw urls"
