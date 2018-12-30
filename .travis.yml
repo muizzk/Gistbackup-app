@@ -5,7 +5,7 @@ script:
     - echo "Downloading jq."
     - sudo apt-get install jq -y
     - echo "Making connection using github api"
-    - wget -O gistbackup.sh https://gist.githubusercontent.com/hemanth22/195b4e3142c1b9ec961d1a81967171c3/raw/0a806ec13fb446009d1cd6bb07face5d69a424af/backupgist.sh
+    - wget -O gistbackup.sh https://gist.githubusercontent.com/hemanth22/195b4e3142c1b9ec961d1a81967171c3/raw/0b13137f19a7bba56fb73493aa729589bea0d478/backupgist.sh
     - chmod 777 gistbackup.sh
     - ./gistbackup.sh
     - cat gist.backup
