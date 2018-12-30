@@ -1,0 +1,17 @@
+language: bash
+
+script:
+    - echo "Making connection using github api"
+    - curl -H "Authorization: token $OAUTH" https://api.github.com/users/hemanth22/gists | jq -r '.[].files[].raw_url'
+    - echo "Connection Established & List gist raw urls"
+
+after_failure:
+    #- set -x
+    - wget -O createIssue.sh https://git.io/CreateIssue
+    - chmod 777 createIssue.sh
+    - ./createIssue.sh
+
+notifications:
+ slack:
+   rooms:
+     - nothingorganization:GN1JzklSpbMyfZVWcS05U6a0#mygitrepos
