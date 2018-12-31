@@ -8,6 +8,7 @@ script:
     - wget -O backupgist.sh https://gist.githubusercontent.com/hemanth22/70dd305f1827c838c2bb3fc781c3e163/raw/e71032891b5883deefdeccfa0e85aa46e3555fe2/backuptest.sh
     - chmod 777 backupgist.sh
     - ./backupgist.sh > list
+    - cat list
     - cat list | jq -r .[].files[].raw_url > gist.backup
     - cat gist.backup
 
