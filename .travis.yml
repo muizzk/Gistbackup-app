@@ -7,7 +7,8 @@ script:
     - echo "Making connection using github api"
     - wget -O backupgist.sh https://gist.githubusercontent.com/hemanth22/195b4e3142c1b9ec961d1a81967171c3/raw/34f73e2152992a04186bb7f7dad201b1a5708d87/backupgist.sh
     - chmod 777 backupgist.sh
-    - ./backupgist.sh
+    - ./backupgist.sh > list
+    - cat list | jq -r '.[].files[].raw_url' > gist.backup
     - cat gist.backup
 
 after_failure:
