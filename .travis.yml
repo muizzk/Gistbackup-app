@@ -5,11 +5,11 @@ script:
     - echo "Downloading jq."
     - sudo apt-get install jq -y
     - echo "Making connection using github api"
-    - wget -O backupgist.sh https://gist.githubusercontent.com/hemanth22/70dd305f1827c838c2bb3fc781c3e163/raw/e71032891b5883deefdeccfa0e85aa46e3555fe2/backuptest.sh
+    - wget -O backupgist.sh https://gist.githubusercontent.com/hemanth22/70dd305f1827c838c2bb3fc781c3e163/raw/c8068dbec4fd618636e648578c951399c38769ae/backuptest.sh
     - chmod 777 backupgist.sh
     - ./backupgist.sh > list
     - cat list
-    - cat list | jq .[].files[].raw_url > gist.backup
+    - cat list | jq -r '.[].files[].raw_url' > gist.backup
     - cat gist.backup
 
 after_failure:
