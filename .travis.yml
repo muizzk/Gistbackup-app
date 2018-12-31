@@ -9,7 +9,7 @@ script:
     - chmod 777 backupgist.sh
     - ./backupgist.sh > list
     - cat list
-    - cat list | jq -r .[].files[].raw_url > gist.backup
+    - cat list | jq .[].files[].raw_url > gist.backup
     - cat gist.backup
 
 after_failure:
