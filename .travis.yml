@@ -5,7 +5,7 @@ script:
     - echo "Downloading jq."
     - sudo apt-get install jq -y
     - echo "Making connection using github api"
-    - curl -H \'Authorization: token $OAUTH\' https://api.github.com/users/hemanth22/gists
+    - curl -H "Authorization: token $OAUTH" https://api.github.com/users/hemanth22/gists
     - backupgist.sh
     - chmod 777 backupgist.sh
     - ./backupgist.sh
